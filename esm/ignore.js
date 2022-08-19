@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import fastGlob from 'fast-glob';
 import gitIgnore from 'ignore';
-import slash from 'slash';
+import slash from '@esm2cjs/slash';
 import {toPath, isNegativePattern} from './utilities.js';
 
 const ignoreFilesGlobOptions = {

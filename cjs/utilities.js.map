@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../esm/utilities.js"],
+  "sourcesContent": ["import {fileURLToPath} from 'node:url';\nimport {Transform} from 'node:stream';\n\nexport const toPath = urlOrPath => urlOrPath instanceof URL ? fileURLToPath(urlOrPath) : urlOrPath;\n\nexport class FilterStream extends Transform {\n\tconstructor(filter) {\n\t\tsuper({\n\t\t\tobjectMode: true,\n\t\t\ttransform(data, encoding, callback) {\n\t\t\t\tcallback(undefined, filter(data) ? data : undefined);\n\t\t\t},\n\t\t});\n\t}\n}\n\nexport const isNegativePattern = pattern => pattern[0] === '!';\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,sBAA4B;AAC5B,yBAAwB;AAEjB,MAAM,SAAS,eAAa,qBAAqB,UAAM,+BAAc,SAAS,IAAI;AAElF,MAAM,qBAAqB,6BAAU;AAAA,EAC3C,YAAY,QAAQ;AACnB,UAAM;AAAA,MACL,YAAY;AAAA,MACZ,UAAU,MAAM,UAAU,UAAU;AACnC,iBAAS,QAAW,OAAO,IAAI,IAAI,OAAO,MAAS;AAAA,MACpD;AAAA,IACD,CAAC;AAAA,EACF;AACD;AAEO,MAAM,oBAAoB,aAAW,QAAQ,OAAO;",
+  "names": []
+}

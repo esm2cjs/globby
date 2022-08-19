@@ -1,6 +1,6 @@
 import path from 'node:path';
 import test from 'ava';
-import slash from 'slash';
+import slash from '@esm2cjs/slash';
 import {
 	isIgnoredByIgnoreFiles,
 	isIgnoredByIgnoreFilesSync,
