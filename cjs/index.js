@@ -88,13 +88,13 @@ const getIgnoreFilesPatterns = (options) => {
 const getFilter = async (options) => {
   const ignoreFilesPatterns = getIgnoreFilesPatterns(options);
   return createFilterFunction(
-    ignoreFilesPatterns.length > 0 && await (0, import_ignore.isIgnoredByIgnoreFiles)(ignoreFilesPatterns, { cwd: options.cwd })
+    ignoreFilesPatterns.length > 0 && await (0, import_ignore.isIgnoredByIgnoreFiles)(ignoreFilesPatterns, options)
   );
 };
 const getFilterSync = (options) => {
   const ignoreFilesPatterns = getIgnoreFilesPatterns(options);
   return createFilterFunction(
-    ignoreFilesPatterns.length > 0 && (0, import_ignore.isIgnoredByIgnoreFilesSync)(ignoreFilesPatterns, { cwd: options.cwd })
+    ignoreFilesPatterns.length > 0 && (0, import_ignore.isIgnoredByIgnoreFilesSync)(ignoreFilesPatterns, options)
   );
 };
 const createFilterFunction = (isIgnored) => {
