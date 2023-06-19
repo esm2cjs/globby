@@ -1,6 +1,6 @@
 {
 	"name": "@esm2cjs/globby",
-	"version": "13.1.4",
+	"version": "13.2.0",
 	"description": "User-friendly glob matching. This is a fork of sindresorhus/globby, but with CommonJS support.",
 	"license": "MIT",
 	"repository": "esm2cjs/globby",

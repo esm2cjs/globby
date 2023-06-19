@@ -74,11 +74,12 @@ const getIsIgnoredPredicate = (files, cwd) => {
 };
 const normalizeOptions = (options = {}) => ({
   cwd: (0, import_utilities.toPath)(options.cwd) || import_node_process.default.cwd(),
-  suppressErrors: Boolean(options.suppressErrors)
+  suppressErrors: Boolean(options.suppressErrors),
+  deep: typeof options.deep === "number" ? options.deep : Number.POSITIVE_INFINITY
 });
 const isIgnoredByIgnoreFiles = async (patterns, options) => {
-  const { cwd, suppressErrors } = normalizeOptions(options);
-  const paths = await (0, import_fast_glob.default)(patterns, { cwd, suppressErrors, ...ignoreFilesGlobOptions });
+  const { cwd, suppressErrors, deep } = normalizeOptions(options);
+  const paths = await (0, import_fast_glob.default)(patterns, { cwd, suppressErrors, deep, ...ignoreFilesGlobOptions });
   const files = await Promise.all(
     paths.map(async (filePath) => ({
       filePath,
@@ -88,8 +89,8 @@ const isIgnoredByIgnoreFiles = async (patterns, options) => {
   return getIsIgnoredPredicate(files, cwd);
 };
 const isIgnoredByIgnoreFilesSync = (patterns, options) => {
-  const { cwd, suppressErrors } = normalizeOptions(options);
-  const paths = import_fast_glob.default.sync(patterns, { cwd, suppressErrors, ...ignoreFilesGlobOptions });
+  const { cwd, suppressErrors, deep } = normalizeOptions(options);
+  const paths = import_fast_glob.default.sync(patterns, { cwd, suppressErrors, deep, ...ignoreFilesGlobOptions });
   const files = paths.map((filePath) => ({
     filePath,
     content: import_node_fs.default.readFileSync(filePath, "utf8")
