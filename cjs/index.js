@@ -67,9 +67,9 @@ const checkCwdOption = (options) => {
 };
 const normalizeOptions = (options = {}) => {
   options = {
-    ignore: [],
-    expandDirectories: true,
     ...options,
+    ignore: options.ignore || [],
+    expandDirectories: options.expandDirectories === void 0 ? true : options.expandDirectories,
     cwd: (0, import_utilities.toPath)(options.cwd)
   };
   checkCwdOption(options);
