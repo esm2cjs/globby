@@ -1,6 +1,6 @@
 {
 	"name": "@esm2cjs/globby",
-	"version": "13.2.1",
+	"version": "13.2.2",
 	"description": "User-friendly glob matching. This is a fork of sindresorhus/globby, but with CommonJS support.",
 	"license": "MIT",
 	"repository": "esm2cjs/globby",
@@ -62,18 +62,17 @@
 	"dependencies": {
 		"@esm2cjs/slash": "^4.0.0",
 		"dir-glob": "^3.0.1",
-		"fast-glob": "^3.2.11",
-		"ignore": "^5.2.0",
+		"fast-glob": "^3.3.0",
+		"ignore": "^5.2.4",
 		"merge2": "^1.4.1"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.18",
+		"@types/node": "^20.3.3",
 		"benchmark": "2.1.4",
-		"get-stream": "^6.0.1",
-		"glob-stream": "^7.0.0",
-		"rimraf": "^3.0.2",
+		"glob-stream": "^8.0.0",
+		"rimraf": "^5.0.1",
 		"tempy": "^3.0.0",
-		"typescript": "^4.5.5"
+		"typescript": "^5.1.6"
 	},
 	"xo": {
 		"ignores": [
